@@ -13,8 +13,7 @@
     "migrate:make": "knex migrate:make",
     "migrate:rollback": "knex migrate:rollback",
     "lint": "eslint client server; exit 0",
-    "vercel-build": "node --openssl-legacy-provider node_modules/.bin/webpack --config ./webpack/webpack.config.prod.js && cp -r public/. dist/"
-  },
+    "vercel-build": "node --openssl-legacy-provider node_modules/.bin/webpack --config ./webpack/webpack.config.prod.js && mkdir -p vercel-static/dist && cp -r dist/. vercel-static/dist/ && cp -r public/. vercel-static/"
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Bikranshu/express-react-boilerplate.git"
